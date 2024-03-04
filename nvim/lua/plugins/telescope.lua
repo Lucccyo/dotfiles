@@ -9,7 +9,7 @@ return {
   },
   keys = {
     {
-      "<leader>tf",
+      "<leader>ff",
       function()
         require('telescope.builtin').find_files({
           hidden = true
@@ -18,32 +18,25 @@ return {
       desc = "[f]iles"
     },
     {
-      "<leader>to",
+      "<leader>of",
       function()
         require('telescope.builtin').oldfiles()
       end,
       desc = "[o]ld (Files)"
     },
     {
-      "<leader>tr",
+      "<leader>lg",
       function()
         require('telescope.builtin').live_grep()
       end,
       desc = "[r]ipgrep"
     },
     {
-      "<leader>tb",
+      "<leader>b",
       function()
         require('telescope.builtin').buffers()
       end,
       desc = "[b]uffers"
-    },
-    {
-      "<leader>th",
-      function()
-        require('telescope.builtin').help_tags()
-      end,
-      desc = "[h]help",
     },
     {
       "<leader>tk",
@@ -53,33 +46,11 @@ return {
       desc = "[k]eymaps (normal)"
     },
     {
-      "<leader>tt",
-      function()
-        require('telescope.builtin').filetypes()
-      end,
-      desc = "[f]iletypes"
-    },
-    {
-      "<leader>ta",
-      function()
-        require("telescope").extensions.aerial.aerial()
-      end,
-      desc = "[a]erial"
-    },
-    {
-      "<leader>tp",
+      "<leader>rp",
       function()
         require 'telescope'.extensions.projects.projects()
       end,
       desc = "[p]rojects"
-    },
-    {
-      "<leader>td",
-      function()
-        local ivy = require('telescope.themes').get_ivy()
-        require('telescope.builtin').diagnostics(ivy)
-      end,
-      desc = "[d]iagnostic"
     },
     {
       "<leader>fb",
@@ -103,15 +74,10 @@ return {
       },
       show_hidden = true,
     })
-
-    require('aerial').setup()
-
     local telescope = require('telescope')
     local actions = require('telescope.actions')
     telescope.load_extension('projects')
-    telescope.load_extension('aerial')
     require("telescope").load_extension "file_browser"
-
     telescope.setup({
       defaults = require('telescope.themes').get_ivy {
         mappings = {
