@@ -13,7 +13,8 @@ def display(l):
 
 def lighten(rgb: tuple[int, int, int], amt):
     ofs = math.floor(amt * (255 - max(rgb)))
-    return (min(rgb[0] + ofs, 255), min(rgb[1] + ofs, 255), min(rgb[2] + ofs, 255))
+    rgb = list(map(lambda c: c + ofs, rgb))
+    return (min(rgb[0], 255), min(rgb[1], 255), min(rgb[2], 255))
 
 def rgb_to_hex(rgb: tuple[int, int, int]):
     return '#{:02x}{:02x}{:02x}'.format(rgb[0], rgb[1], rgb[2])
@@ -23,7 +24,7 @@ def get_palette(file_name: str, size: int):
   return color_thief.get_palette(color_count=size + 1)
 
 def lum(rgb: tuple[int, int, int]):
-  return math.sqrt( .241 * rgb[0] + .691 * rgb[1] + .068 * rgb[2] )
+  return math.sqrt(0.241 * rgb[0] + 0.691 * rgb[1] + 0.068 * rgb[2])
 
 palette: tuple[int, int, int] = get_palette(file_name, size)
 palette.sort(key=lambda rgb:lum(rgb))
