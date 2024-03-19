@@ -11,7 +11,7 @@ def display(l):
     for e in l:
         print(e)
 
-def lighten(rgb: tuple[int, int, int], amt):
+def lighten(rgb: tuple[int, int, int], amt: float):
     ofs = math.floor(amt * (255 - max(rgb)))
     rgb = list(map(lambda c: c + ofs, rgb))
     return (min(rgb[0], 255), min(rgb[1], 255), min(rgb[2], 255))
