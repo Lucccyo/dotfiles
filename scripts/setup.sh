@@ -47,10 +47,8 @@ colour_lmax=$(get_colour $(wc -l < ${colours_file}))
 set_waybar_colours "$colour_lmax" "text"
 colour_l24=$(get_colour 24)
 set_waybar_colours "$colour_l24" "focused"
-colour_basex="$colour_light_bg"
 for i in {7..1}; do
-  colour_basex=$(python "$current_dir_path/"illuminate.py "$colour_basex" 0.03)
-  set_waybar_colours "$colour_basex" "base$i"
+  set_waybar_colours "$colour_light_bg" "base$i"
 done
 
 
