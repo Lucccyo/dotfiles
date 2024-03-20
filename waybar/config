@@ -1,0 +1,165 @@
+{
+    "layer": "top",
+    "height": 25,
+    "modules-left": [
+        "sway/workspaces",
+        "custom/arrow10",
+        "sway/submap"
+    ],
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-scroll": true,
+     },
+
+    "modules-right": [
+        "custom/arrow9",
+        "pulseaudio",
+        "custom/arrow8",
+        "network",
+        "custom/arrow7",
+        "memory",
+        "custom/arrow6",
+        "disk",
+        "custom/arrow5",
+        "backlight",
+        "custom/arrow4",
+        "battery",
+        "custom/arrow3",
+        "clock#date",
+        "custom/arrow2",
+        "clock#time",
+    ],
+
+    // Modules
+
+    "clock#time": {
+        "interval": 10,
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+        "interval": 20,
+        "format": "{:%e %b %Y}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": "<span></span> {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "disk": {
+        "format": "<span></span> {percentage_free}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "memory": {
+        "format": "<span></span> {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "backlight": {
+        "format": "<span>{icon}</span> {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "sway/language": {
+        "min-length": 3,
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span>{icon}</span> {capacity}%",
+        "format-charging": "<span></span> {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "network": {
+        "interval": 2,
+        "interface": "wlan0",
+        "format-wifi": "<span></span> {essid}",
+        "format-disconnected": "<span>No wifi</span> ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits}\n{bandwidthUpBits}"
+    },
+
+    "pulseaudio": {
+        "format": "<span>{icon}</span> {volume}%   {format_source}",
+        "format-bluetooth": "<span>{icon}</span> {volume}%   {format_source}",
+        "format-bluetooth-muted": "<span> {icon}</span>   {format_source}",
+        "format-source": "<span></span> {volume}%",
+        "format-source-muted": "<span></span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "push2talk -t",
+        "on-click-middle": "helvum"
+    },
+
+    // Arrows
+
+    "custom/arrow2": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow3": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow4": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow5": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow6": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow7": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow8": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow9": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/arrow10": {
+        "format": "",
+        "tooltip": false
+    }
+}
+

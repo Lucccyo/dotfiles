@@ -1,0 +1,174 @@
+@define-color background #251c25;
+@define-color unfocused #3a313a;
+@define-color text #fbfad0;
+@define-color black      #000000;
+
+/* main color */
+@define-color focused #3aa45b;
+
+/* 'base*' colours are shades of 'focused' colour */
+/*  the lower the number, the lighter the colour */
+@define-color base7 #3f363f;
+@define-color base6 #443b44;
+@define-color base5 #494049;
+@define-color base4 #4e454e;
+@define-color base3 #534a53;
+@define-color base2 #584f58;
+@define-color base1 #5d545d;
+
+* {
+  font-family: "monospace", "Font Awesome 6 Free";
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+window#waybar {
+  color: @text;
+  background: @background;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  font-size: 10pt;
+}
+
+#submap,
+#pulseaudio,
+#custom-usbguard,
+#custom-yubikey,
+#custom-eyes,
+#custom-decrypted,
+#custom-security,
+#custom-systemd,
+#custom-updates,
+#custom-mail,
+#network,
+#cpu,
+#disk,
+#memory,
+#backlight,
+#battery,
+#clock {
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
+
+#workspaces button {
+  padding-left: 2pt;
+  padding-right: 2pt;
+  color: @text;
+  background: @unfocused;
+}
+
+#workspaces button.focused {
+  color: @background;
+  background: @focused;
+}
+
+#window {
+  margin-right: 35pt;
+  margin-left: 35pt;
+}
+
+/* modules */
+
+#pulseaudio {
+  background: @base1;
+  color: @text;
+}
+
+#network {
+  background: @base2;
+  color: @text;
+}
+
+#memory {
+  background: @base3;
+  color: @text;
+}
+
+#disk {
+  background: @base4;
+  color: @text;
+}
+
+#backlight {
+  background: @base5;
+  color: @text;
+}
+
+#battery {
+  background: @base6;
+  color: @text;
+}
+
+#clock.date {
+  background: @base7;
+  color: @text;
+}
+
+#clock.time {
+  background: @focused;
+  color: @black;
+}
+
+/* arrows */
+
+#custom-arrow2 {
+  font-size: 15pt;
+  color: @focused;
+  background: @base7;
+}
+
+#custom-arrow3 {
+  font-size: 15pt;
+  color: @base7;
+  background: @base6;
+}
+
+#custom-arrow4 {
+  font-size: 15pt;
+  color: @base6;
+  background: @base5;
+}
+
+#custom-arrow5 {
+  font-size: 15pt;
+  color: @base5;
+  background: @base4;
+}
+
+#custom-arrow6 {
+  font-size: 15pt;
+  color: @base4;
+  background: @base3;
+}
+
+#custom-arrow7 {
+  font-size: 15pt;
+  color: @base3;
+  background: @base2;
+}
+
+#custom-arrow8 {
+  font-size: 15pt;
+  color: @base2;
+  background: @base1;
+}
+
+#custom-arrow9 {
+  font-size: 15pt;
+  color: @base1;
+  background: transparent;
+}
+
+#custom-arrow10 {
+  font-size: 15pt;
+  color: @unfocused;
+  background: transparent;
+}
+
