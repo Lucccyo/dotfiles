@@ -3,18 +3,12 @@ return {
     'lewis6991/gitsigns.nvim',
     lazy = false,
     config = function()
-      require('gitsigns').setup()
+      local gitsigns = require('gitsigns')
+      gitsigns.setup()
+      vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, { desc = "[b]lame" })
     end,
-    keys = {
-      {
-        "<leader>gb",
-        function()
-          require('gitsigns').blame_line()
-        end,
-        desc = "[b]lame"
-      }
-    }
   },
+
   {
     'dinhhuy258/git.nvim',
     config = function()

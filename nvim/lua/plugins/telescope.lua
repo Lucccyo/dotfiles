@@ -1,106 +1,58 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.1',
+  tag = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'ahmedkhalf/project.nvim',
     'stevearc/aerial.nvim',
     'nvim-telescope/telescope-file-browser.nvim'
   },
-  keys = {
-    {
-      "<leader>ff",
-      function()
-        require('telescope.builtin').find_files({
-          hidden = true
-        })
-      end,
-      desc = "[f]iles"
-    },
-    {
-      "<leader>of",
-      function()
-        require('telescope.builtin').oldfiles()
-      end,
-      desc = "[o]ld (Files)"
-    },
-    {
-      "<leader>lg",
-      function()
-        require('telescope.builtin').live_grep()
-      end,
-      desc = "[r]ipgrep"
-    },
-    {
-      "<leader>b",
-      function()
-        require('telescope.builtin').buffers()
-      end,
-      desc = "[b]uffers"
-    },
-    {
-      "<leader>tk",
-      function()
-        require('telescope.builtin').keymaps()
-      end,
-      desc = "[k]eymaps (normal)"
-    },
-    {
-      "<leader>rp",
-      function()
-        require 'telescope'.extensions.projects.projects()
-      end,
-      desc = "[p]rojects"
-    },
-    {
-      "<leader>fb",
-      function()
-        require("telescope").load_extension("file_browser").file_browser()
-      end,
-      desc = "[f]ile [b]rowser"
-    }
-  },
   config = function()
-    require("project_nvim").setup({
+    require('project_nvim').setup({
       patterns = {
-        ".git",
-        "_opam",
-        "_darcs",
-        ".hg",
-        ".bzr",
-        ".svn",
-        "Makefile",
-        "package.json"
+        '.git',
+        '_opam',
+        '_darcs',
+        '.hg',
+        '.bzr',
+        '.svn',
+        'Makefile',
+        'package.json'
       },
       show_hidden = true,
     })
     local telescope = require('telescope')
-    local actions = require('telescope.actions')
-    telescope.load_extension('projects')
-    require("telescope").load_extension "file_browser"
+    local builtin   = require('telescope.builtin')
+    local themes    = require('telescope.themes')
+    local actions   = require('telescope.actions')
+
+    local projects     = telescope.load_extension('projects')
+    local file_browser = telescope.load_extension('file_browser')
+
     telescope.setup({
-      defaults = require('telescope.themes').get_ivy {
+      defaults = themes.get_ivy {
         mappings = {
           n = {
-            ["q"] = actions.close
+            ['q'] = actions.close
           },
         },
       },
       extensions = {
         file_browser = {
-          theme = "ivy",
-          -- disables netrw and use telescope-file-browser in its place
-          hijack_netrw = true,
-          mappings = {
-            ["i"] = {
-              -- your custom insert mode mappings
-            },
-            ["n"] = {
-              -- your custom normal mode mappings
-            },
-          },
+          theme        = 'ivy',
+          hijack_netrw = true, -- disables netrw and use telescope-file-browser in its place
         },
       },
     })
+
+    -- Keymaps
+    vim.keymap.set("n", "<leader>ff", builtin.find_files,         { desc = "[f]iles"            })
+    vim.keymap.set("n", "<leader>of", builtin.oldfiles,           { desc = "[o]ld [f]iles"      })
+    vim.keymap.set("n", "<leader>lg", builtin.live_grep ,         { desc = "[r]ipgrep"          })
+    vim.keymap.set("n", "<leader>b",  builtin.buffers,            { desc = "[b]uffers"          })
+    vim.keymap.set("n", "<leader>tk", builtin.keymaps,            { desc = "[k]eymaps (normal)" })
+    vim.keymap.set("n", "<leader>rp", projects.projects,          { desc = "[p]rojects"         })
+    vim.keymap.set("n", "<leader>fb", file_browser.file_browser,  { desc = "[f]ile [b]rowser"   })
+
   end
 }
