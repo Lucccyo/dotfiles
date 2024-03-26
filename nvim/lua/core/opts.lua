@@ -1,39 +1,43 @@
--- Default indent size
-local indent = 4
-vim.o.expandtab = true
-vim.o.shiftwidth = indent
-vim.o.tabstop = indent
-vim.o.smartindent = true
+local options = {
+    -- Default indent size
+    expandtab     = true,
+    shiftwidth    = 4,
+    tabstop       = 4,
+    smartindent   = true,
 
--- Status line
-local height = 2
-vim.o.cmdheight = height
-vim.o.showcmd = true
-vim.o.laststatus = 2 -- Always
+    -- Hidden chars
+    list = true,
 
--- Scroll size
-local scroll = 8
-vim.o.scrolloff = scroll
-vim.o.sidescrolloff = scroll
+    -- UI
+    termguicolors = true,
+    bg            = "dark",
+    mouse         = 'a',      -- Always be able to use mouse
+    number        = true,
+    splitbelow    = true,
+    splitright    = true,
 
--- Hidden chars
-vim.o.list = true
+    -- Status line
+    cmdheight   = 1,
+    showcmd     = true,
+    laststatus  = 2, -- Always
+
+    -- Clipboard
+    clipboard = 'unnamed,unnamedplus',
+
+    -- Scroll size
+    scrolloff     = 8,
+    sidescrolloff = 8,
+
+    -- Search
+    ignorecase  = true,
+    smartcase   = true,
+
+    -- Completion
+    wildmode = 'list:longest'
+}
+
 vim.opt.listchars:append("trail:·")
 
--- UI
-vim.o.termguicolors = true
-vim.o.bg = "dark"
-vim.o.mouse = 'a' -- Always be able to use mouse
-vim.o.number = true
-vim.o.splitbelow = true
-vim.o.splitright = true
-
--- Clipboard
-vim.o.clipboard = 'unnamed,unnamedplus'
-
--- Completion
-vim.o.wildmode = 'list:longest'
-
--- Search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
