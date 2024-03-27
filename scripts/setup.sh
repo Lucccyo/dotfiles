@@ -46,16 +46,19 @@ set_waybar_colours "$colour_l3" "background"
 set_waybar_colours "$colour_light_l3" "unfocused"
 set_waybar_colours "$colour_lmax" "text"
 set_waybar_colours "$colour_l24" "focused"
-## with background's modules shading
-# colour_basex="$colour_light_l3"
-# for i in {7..1}; do
-#   colour_basex=$(python "$current_dir_path/"illuminate.py "$colour_basex" 0.03)
-#   set_waybar_colours "$colour_basex" "base$i"
-# done
-## with flat colour
-for i in {7..1}; do
-  set_waybar_colours "$colour_light_l3" "base$i"
-done
+if [[ "$2" == "-s" || "$2" == "--shading" ]]; then
+  ## with background's modules shading
+  colour_basex="$colour_light_l3"
+  for i in {7..1}; do
+    colour_basex=$(python "$current_dir_path/"illuminate.py "$colour_basex" 0.03)
+    set_waybar_colours "$colour_basex" "base$i"
+  done
+else
+  ## with flat colour
+  for i in {7..1}; do
+    set_waybar_colours "$colour_light_l3" "base$i"
+  done
+fi
 
 ## changing colours in alacritty
 set_alacritty_colours "$colour_l3" "background"
