@@ -48,7 +48,7 @@ return {
     -- Keymaps
     vim.keymap.set("n", "<leader>ff", builtin.find_files,         { desc = "[f]iles"            })
     vim.keymap.set("n", "<leader>of", builtin.oldfiles,           { desc = "[o]ld [f]iles"      })
-    vim.keymap.set("n", "<leader>lg", builtin.live_grep ,         { desc = "[r]ipgrep"          })
+    vim.keymap.set("n", "<leader>lg", builtin.live_grep,          { desc = "[r]ipgrep"          })
     vim.keymap.set("n", "<leader>b",  builtin.buffers,            { desc = "[b]uffers"          })
     vim.keymap.set("n", "<leader>tk", builtin.keymaps,            { desc = "[k]eymaps (normal)" })
     vim.keymap.set("n", "<leader>rp", projects.projects,          { desc = "[p]rojects"         })
