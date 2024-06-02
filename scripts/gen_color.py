@@ -1,7 +1,7 @@
 import sys
 import math
 import colorsys
-from colorthief import ColorThief
+from colorthief.py import *
 import matplotlib.colors as mc
 
 file_name: str = sys.argv[1]
