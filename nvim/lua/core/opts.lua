@@ -1,7 +1,7 @@
 local options = {
     -- Default indent size
     expandtab     = true,
-    shiftwidth    = 4,
+    shiftwidth    = 2,
     tabstop       = 4,
     smartindent   = true,
 
@@ -33,7 +33,9 @@ local options = {
     smartcase   = true,
 
     -- Completion
-    wildmode = 'list:longest'
+    wildmode = 'list:longest',
+
+    colorcolumn = "80",
 }
 
 vim.opt.listchars:append("trail:·")

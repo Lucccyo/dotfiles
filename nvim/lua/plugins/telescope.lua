@@ -40,7 +40,8 @@ return {
       extensions = {
         file_browser = {
           theme        = 'ivy',
-          hijack_netrw = true, -- disables netrw and use telescope-file-browser in its place
+          hijack_netrw = true,
+          hidden       = true,
         },
       },
     })
@@ -52,7 +53,14 @@ return {
     vim.keymap.set("n", "<leader>b",  builtin.buffers,            { desc = "[b]uffers"          })
     vim.keymap.set("n", "<leader>tk", builtin.keymaps,            { desc = "[k]eymaps (normal)" })
     vim.keymap.set("n", "<leader>rp", projects.projects,          { desc = "[p]rojects"         })
-    vim.keymap.set("n", "<leader>fb", file_browser.file_browser,  { desc = "[f]ile [b]rowser"   })
 
+    -- Update this line
+    vim.keymap.set("n", "<leader>fb", function()
+      file_browser.file_browser({
+        path = vim.fn.expand('%:p:h'),
+        hidden = true
+      })
+    end, { desc = "[f]ile [b]rowser" })
   end
 }
+

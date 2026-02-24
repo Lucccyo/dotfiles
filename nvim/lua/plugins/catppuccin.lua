@@ -4,7 +4,6 @@ return {
     name = "catppuccin",
     priority = 10000,
     config = function()
-      vim.cmd.colorscheme("catppuccin-frappe")
       require("catppuccin").setup {
         color_overrides = {
           all = {
@@ -21,6 +20,7 @@ return {
             mocha = {},
           }
       }
+      vim.cmd.colorscheme("catppuccin-frappe")
     end
   }
 }

@@ -24,10 +24,33 @@ nmap("<S-Right>", ":vertical resize -2<CR>", "Resize right")
 nmap("<TAB>", ":bnext<CR>", "Next buffer")
 nmap("<S-TAB>", ":bprevious<CR>", "Previous buffer")
 
--- Insert mode
-imap("jk", "<Esc>", "Escape")
-imap("kj", "<Esc>", "Escape")
+vim.keymap.set("n", "<leader>tt", function()
+  local dir = vim.fn.expand("%:p:h")
+  vim.fn.jobstart({ "alacritty", "--working-directory", dir }, { detach = true })
+end)
 
+nmap("<leader>+", ":tabnew<CR>", "Open a new empty tab")
+nmap("[", ":tabprev<CR>", "Move to the prev tab")
+nmap("]", ":tabnext<CR>", "Move to the next tab")
+
+vim.api.nvim_create_user_command("Spelling", function()
+  if vim.opt.spell:get() then
+    vim.opt.spell = false
+    print("Disable spell checker.")
+  else
+    vim.opt.spell = true
+    vim.opt.spelllang = { "fr" }
+    print("Enable spell checker.")
+  end
+end, {})
+
+  vim.api.nvim_create_user_command("CmpOff", function()
+    require("cmp").setup.buffer({ enabled = false })
+  end, {})
+
+  vim.api.nvim_create_user_command("CmpOn", function()
+    require("cmp").setup.buffer({ enabled = true })
+  end, {})
 
 -- Visual mode
 vmap("<", "<gv", "Retab left and keep selected")
