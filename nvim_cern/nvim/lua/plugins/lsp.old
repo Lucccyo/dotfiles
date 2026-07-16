@@ -1,0 +1,29 @@
+-- return {
+--     "neovim/nvim-lspconfig",
+--     event = {"BufReadPre", "BufNewFile"},
+--     config = function()
+--         -- vim.lsp.config("lua_ls", {})
+--         -- vim.lsp.enable("lua_ls")
+--         -- vim.lsp.config("rust_analyzer", {
+--         -- settings = {
+--         --     ["rust-analyzer"] = {
+--         --         imports = {
+--         --             granularity = {
+--         --                 group = "module",
+--         --             },
+--         --             prefix = "self",
+--         --         },
+--         --         cargo = {
+--         --             buildScripts = {
+--         --                 enable = true,
+--         --             },
+--         --         },
+--         --         procMacro = {
+--         --             enable = true
+--         --         },
+--         --     },
+--         -- },
+--     })
+--     -- vim.lsp.enable("rust-analyzer")
+--     end
+-- }
