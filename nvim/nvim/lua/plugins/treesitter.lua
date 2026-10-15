@@ -4,7 +4,24 @@ return {
   lazy = false,
   build = ":TSUpdate",
   config = function()
-    local languages = { "lua", "luadoc", "vim", "vimdoc", "query", "markdown", "markdown_inline", "bash", "json", "toml", "yaml" }
+    local languages = {
+      "lua",
+      "luadoc",
+      "vim",
+      "vimdoc",
+      "query",
+      "markdown",
+      "markdown_inline",
+      "bash",
+      "json",
+      "toml",
+      "yaml",
+      "python",
+      "c",
+      "cpp",
+      "cmake",
+      "make"
+    }
 
     require("nvim-treesitter").setup({})
     require("nvim-treesitter").install(languages)

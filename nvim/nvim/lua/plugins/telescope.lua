@@ -10,7 +10,7 @@ return {
     },
   },
   keys = {
-    { "<leader>f", "<cmd>Telescope find_files<CR>", desc = "Chercher un fichier" },
+    { "<leader>fb", "<cmd>Telescope find_files<CR>", desc = "Chercher un fichier" },
     { "<leader>lg", "<cmd>Telescope live_grep<CR>", desc = "Chercher dans les fichiers (ripgrep)" },
     { "<leader>b", "<cmd>Telescope buffers<CR>", desc = "Buffers ouverts" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Aide Neovim" },

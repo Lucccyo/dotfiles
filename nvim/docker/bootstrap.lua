@@ -15,8 +15,17 @@ end)
 vim.wait(300000, function() return finished end, 200)
 
 local languages = {
-  "lua", "luadoc", "vim", "vimdoc", "query", "markdown",
-  "markdown_inline", "bash", "json", "toml", "yaml",
+  "lua",
+  "luadoc",
+  "vim",
+  "vimdoc",
+  "query",
+  "markdown",
+  "markdown_inline",
+  "bash",
+  "json",
+  "toml",
+  "yaml",
 }
 require("nvim-treesitter").install(languages):wait(300000)
 

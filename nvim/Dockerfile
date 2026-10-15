@@ -5,8 +5,21 @@ ENV LANG=C.UTF-8 \
     COLORTERM=truecolor
 
 RUN pacman -Syu --noconfirm --needed \
-      neovim git base-devel ripgrep fd \
-      tree-sitter-cli curl wget unzip tar gzip \
+      neovim \
+      git \
+      base-devel \
+      ripgrep \
+      fd \
+      tree-sitter-cli \
+      curl \
+      wget \
+      unzip \
+      tar \
+      gzip \
+      cmake \
+      clang \
+      nodejs \
+      npm \
     && pacman -Scc --noconfirm
 
 RUN useradd -m -s /bin/bash dev
