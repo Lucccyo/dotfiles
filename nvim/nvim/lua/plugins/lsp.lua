@@ -36,6 +36,7 @@ return {
           "clangd",
           "neocmake",
           "marksman",
+          "asm_lsp",
         },
         automatic_enable = true,
       })

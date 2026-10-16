@@ -53,3 +53,4 @@ Pour avoir la liste des parsers disponible, on fait
 - cmake (neocmake)
 - makefile (NO LSP)
 - markdown (marksman)
+- asm/nasm (asm_lsp)

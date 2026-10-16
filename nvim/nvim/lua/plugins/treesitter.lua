@@ -20,7 +20,8 @@ return {
       "c",
       "cpp",
       "cmake",
-      "make"
+      "make",
+      "nasm",
     }
 
     require("nvim-treesitter").setup({})

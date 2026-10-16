@@ -20,6 +20,7 @@ RUN pacman -Syu --noconfirm --needed \
       clang \
       nodejs \
       npm \
+      cargo \
     && pacman -Scc --noconfirm
 
 RUN useradd -m -s /bin/bash dev
