@@ -26,6 +26,8 @@ local languages = {
   "json",
   "toml",
   "yaml",
+  "c",
+  "cpp"
 }
 require("nvim-treesitter").install(languages):wait(300000)
 

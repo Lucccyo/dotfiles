@@ -35,6 +35,7 @@ return {
           "pyright",
           "clangd",
           "neocmake",
+          "marksman",
         },
         automatic_enable = true,
       })

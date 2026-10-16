@@ -52,3 +52,4 @@ Pour avoir la liste des parsers disponible, on fait
 - cpp (clangd)
 - cmake (neocmake)
 - makefile (NO LSP)
+- markdown (marksman)
