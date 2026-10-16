@@ -3,6 +3,7 @@ return {
   cmd = "Telescope",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -10,7 +11,7 @@ return {
     },
   },
   keys = {
-    { "<leader>fb", "<cmd>Telescope find_files<CR>", desc = "Chercher un fichier" },
+    { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Chercher un fichier" },
     { "<leader>lg", "<cmd>Telescope live_grep<CR>", desc = "Chercher dans les fichiers (ripgrep)" },
     { "<leader>b", "<cmd>Telescope buffers<CR>", desc = "Buffers ouverts" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Aide Neovim" },
@@ -32,5 +33,12 @@ return {
       },
     })
     pcall(telescope.load_extension, "fzf")
+    local file_browser = telescope.load_extension('file_browser')
+    vim.keymap.set("n", "<leader>fb", function()
+      file_browser.file_browser({
+        path = vim.fn.expand('%:p:h'),
+        hidden = true
+      })
+    end,  { desc = "Explorateur de fichiers"   })
   end,
 }
