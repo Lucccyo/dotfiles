@@ -4,7 +4,7 @@ return {
   lazy = false,
   priority = 1000,
   opts = {
-    flavour = "mocha",
+    flavour = "frappe",
     integrations = {
       gitsigns = true,
       telescope = { enabled = true },
@@ -17,6 +17,20 @@ return {
           warnings = { "undercurl" },
         },
       },
+    },
+    color_overrides = {
+      all = {
+        text = "#e9e678",
+      },
+      frappe = {
+        base = "#050f2c",
+        text = "#e9e678",
+        mantle = "#5b5f0d",
+        crust = "#474747",
+      },
+        latte = {},
+        macchiato = {},
+        mocha = {},
     },
   },
   config = function(_, opts)
