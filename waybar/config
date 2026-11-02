@@ -3,8 +3,8 @@
     "height": 25,
     "modules-left": [
         "sway/workspaces",
-        "custom/arrow10",
-        "sway/submap"
+        "custom/arrow10"
+        // "sway/submap"
     ],
     "sway/workspaces": {
         "all-outputs": true,
@@ -17,11 +17,9 @@
         "custom/arrow8",
         "network",
         "custom/arrow7",
-        "memory",
-        "custom/arrow6",
-        "disk",
-        "custom/arrow5",
         "backlight",
+        "custom/arrow5",
+        "custom/home",
         "custom/arrow4",
         "battery",
         "custom/arrow3",
@@ -32,6 +30,13 @@
 
     // Modules
 
+    "custom/home": {
+        "exec": "df -h /home/cha | awk 'NR==2{print $3\"/\"$2\" used\"}'",
+        "interval": 30,
+        "format": "{}",
+        "tooltip": false
+    },
+
     "clock#time": {
         "interval": 10,
         "format": "{:%H:%M}",
@@ -40,7 +45,7 @@
 
     "clock#date": {
         "interval": 20,
-        "format": "{:%e %b %Y}",
+        "format": "{:%e %b %Y, Week %V}",
         "tooltip": false
     },
 
@@ -97,18 +102,11 @@
 
     "pulseaudio": {
         "format": "<span>{icon}</span> {volume}%   {format_source}",
-        "format-bluetooth": "<span>{icon}</span> {volume}%   {format_source}",
-        "format-bluetooth-muted": "<span> {icon}</span>   {format_source}",
         "format-source": "<span></span> {volume}%",
-        "format-source-muted": "<span></span>",
+        "format-source-muted": "<span> mut</span>",
+        "format-muted": "<span> mut</span>  {format_source}",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "default": ["", ""]
         },
         "on-click": "pavucontrol",
         "on-click-right": "push2talk -t",

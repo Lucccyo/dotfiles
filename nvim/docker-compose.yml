@@ -1,0 +1,11 @@
+services:
+  nvim:
+    build: .
+    image: nvim-arch
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./nvim:/home/dev/.config/nvim
+      - ./workspace:/home/dev/workspace
+    working_dir: /home/dev/workspace
+    command: bash

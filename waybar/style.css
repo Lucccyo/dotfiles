@@ -8,13 +8,13 @@
 
 /* 'base*' colours are shades of 'focused' colour */
 /*  the lower the number, the lighter the colour */
-@define-color base7 #3f363f;
-@define-color base6 #443b44;
-@define-color base5 #494049;
-@define-color base4 #4e454e;
-@define-color base3 #534a53;
-@define-color base2 #584f58;
-@define-color base1 #5d545d;
+@define-color base7 #3a313a;
+@define-color base6 #3a313a;
+@define-color base5 #3a313a;
+@define-color base4 #3a313a;
+@define-color base3 #3a313a;
+@define-color base2 #3a313a;
+@define-color base1 #3a313a;
 
 * {
   font-family: "monospace", "Font Awesome 6 Free";
@@ -25,7 +25,7 @@
   padding: 0;
   box-shadow: none;
   text-shadow: none;
-  icon-shadow: none;
+  -gtk-icon-shadow: none;
 }
 
 window#waybar {
@@ -36,7 +36,7 @@ window#waybar {
   font-size: 10pt;
 }
 
-#submap,
+/* #submap, */
 #pulseaudio,
 #custom-usbguard,
 #custom-yubikey,
@@ -76,7 +76,7 @@ window#waybar {
 
 /* modules */
 
-#pulseaudio {
+#pulseaudio, #custom-home {
   background: @base1;
   color: @text;
 }

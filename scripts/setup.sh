@@ -12,6 +12,11 @@ set_waybar_colours() {
   sed -ri "s|^@define-color $2.*|@define-color $2 $1;|g" "${waybar_style}"
 }
 
+set_border_colours() {
+  # $1 -> string of colour "#00ffff"
+  sed -ri "s|^client\.focused.*|client.focused $1 $1 $1 $1 $1|" "${sway_config}"
+}
+
 set_alacritty_colours() {
   # $1 -> string of colour "#00ffff"
   # $2 -> identifier
@@ -70,5 +75,9 @@ set_alacritty_colours "$colour_l24" "yellow" # git branch colour
 set_catppuccin_frappe_colours "$colour_l3" "base"
 set_catppuccin_frappe_colours "$colour_lmax" "text"
 set_catppuccin_frappe_colours "$colour_l24" "mantle" # bar
+
+## changing colours of focused border tab
+set_border_colours "$colour_lmax"
+echo "$colour_lmax"
 
 sway reload
