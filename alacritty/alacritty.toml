@@ -34,3 +34,5 @@ white = "#f8f8f2"
 background = "#251c25"
 foreground = "#fbfad0"
 
+[window]
+opacity = 0.9
